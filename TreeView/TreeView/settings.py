@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'TreeView.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'db',
+        'NAME': 'db_menu',
         'USER': 'postgres',
         'PASSWORD': '1z3q2w',
         'HOST': 'localhost',
