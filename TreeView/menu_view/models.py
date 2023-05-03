@@ -12,7 +12,7 @@ class TreeNodeModel(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('treenode', kwargs={'treenode_slug': self.slug})
+        return reverse('treenode', kwargs={'slug': self.slug})
 
     def save(self, *args, **kwargs):
         if not NameParent.objects.filter(name=self.name):
