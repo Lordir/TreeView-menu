@@ -2,8 +2,13 @@
 
 {% block content %}
 
-{% for i in menu %}
-    <a href="{{ i.slug }}">{{i.name}}</a>
+{% for i in menu1 %}
+    <a href="{{ i.slug }}">{{i.name|linebreaks}}</a>
 {% endfor %}
+" "
+{% for i in menu2 %}
+    <a href="{{ i.slug }}">{{i.name|linebreaks}}</a>
+{% endfor %}
+
 
 {% endblock %}

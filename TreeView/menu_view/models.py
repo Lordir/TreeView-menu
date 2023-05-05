@@ -7,6 +7,7 @@ class TreeNodeModel(models.Model):
     parent = models.ForeignKey('NameParent', on_delete=models.PROTECT, blank=True, default=1, verbose_name="Родитель")
     slug = models.SlugField(max_length=50, blank=True, unique=True, db_index=True, verbose_name="URL")
     level = models.PositiveIntegerField(blank=True, default=0)
+    number_menu = models.PositiveIntegerField(blank=True, default=1)
 
     def __str__(self):
         return self.name

@@ -3,7 +3,11 @@
 {% block content %}
 
 {% for i in menu %}
-    <a href="{{ i.get_absolute_url }}">{{i.name}}</a>
-{% endfor %}
+    {% if i.level == 0 or i.parent == object.parent or i.parent == object.name %}
 
+        <a href="{{ i.get_absolute_url }}">{{i.name|linebreaks}}</a>
+
+    {% endif %}
+    {{ i.parent }}
+{% endfor %}
 {% endblock %}

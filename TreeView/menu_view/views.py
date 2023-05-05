@@ -14,8 +14,10 @@ class Home(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['menu'] = TreeNodeModel.objects.all()
+        # context['menu'] = TreeNodeModel.objects.all()
         # print(context['menu'][2].level)
+        context['menu1'] = TreeNodeModel.objects.filter(number_menu=1)
+        context['menu2'] = TreeNodeModel.objects.filter(number_menu=2)
         return context
 
 
@@ -26,6 +28,7 @@ class Menu(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # print(context["object"].level)
-        context['menu'] = TreeNodeModel.objects.all()
+        number = context["object"].number_menu
+        context['menu'] = TreeNodeModel.objects.filter(number_menu=number)
         print(context['menu'][0].get_absolute_url())
         return context
